@@ -6,7 +6,7 @@ public class Square {
         return firstSide*secondSide;
     }
 
-    public static float area(float firstSide, float secondSide) {
+    public static float area (float firstSide, float secondSide) {
         return firstSide*secondSide;
     }
 
