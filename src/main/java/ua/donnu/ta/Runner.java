@@ -10,7 +10,7 @@ public class Runner {
 
         float edge = 6;
 
-        result = Dodecahedron.area(edge);
+        result = Dodecahedron.float_area_value(edge);
 
         System.out.println(result);
 
