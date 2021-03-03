@@ -18,4 +18,20 @@ public class HexagonalPrism {
         return (float) ((float) (Math.pow(3, 0.5)/2)*Math.pow(base_side, 2)*height);
     }
 
+    public static int base_area(int base_side){
+
+        return (int) (3*Math.pow(3, 0.5)*Math.pow(base_side, 2))/2;
+    }
+
+    public static int side_area(int height, int base_side){
+        return 6*(height*base_side);
+    }
+
+    public static int surface_area(int base_area, int side_area){
+        return base_area+side_area;
+    }
+
+    public static int prism_volume(int height, int base_side){
+        return (int) ((int) (Math.pow(3, 0.5)/2)*Math.pow(base_side, 2)*height);
+    }
 }
