@@ -34,7 +34,9 @@ public class HexagonalPrismTestClass {
         });
     }
 
-//    @Test
-//    public void
-//
+    @Test
+    public void TypeStringData(){
+        assertEquals('*', HexagonalPrism.prism_volume('^', ')'));
+    }
+
 }
