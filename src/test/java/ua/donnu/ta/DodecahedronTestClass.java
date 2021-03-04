@@ -69,7 +69,7 @@ public class DodecahedronTestClass {
     public void PositiveValue_() {
         Assertions.assertEquals(743.2462370544337, Dodecahedron.double_area_value(6.0), "The calculation is not correct");
     }
-
+ 
     @Test
     @DisplayName("Check the result of dodecahedron area calculation with five positive digits value")
     public void PositiveFiveDigitsValue_() {
