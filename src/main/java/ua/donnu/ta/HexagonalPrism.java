@@ -1,6 +1,10 @@
 package ua.donnu.ta;
 
-import java.lang.reflect.Method;
+import java.text.Format;
+
+import java.text.NumberFormat;
+
+import java.text.ParseException;
 
 public class HexagonalPrism {
 
@@ -40,6 +44,9 @@ public class HexagonalPrism {
         }
         return (float) ((float) (Math.pow(3, 0.5)/2)*Math.pow(base_side, 2)*height);
     }
+
+
+
 
 
 }

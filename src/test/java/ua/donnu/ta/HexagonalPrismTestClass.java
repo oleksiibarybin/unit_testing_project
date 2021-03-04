@@ -17,7 +17,24 @@ public class HexagonalPrismTestClass {
 
     @Test
     public void HexagonalPrismSurfaceAreaAndVolumeCalculatorNegativeNumbersCalculationCheck(){
-        assertEquals(228, HexagonalPrism.prism_volume(-12.5F, -14.5F));
+        assertEquals(2276.02294921875, HexagonalPrism.prism_volume(-12.5F, -14.5F));
     }
 
+    @Test
+    public void ExceptionTesting(){
+        assertThrows(RuntimeException.class, () -> {
+            HexagonalPrism.prism_volume(-12.5F, -14.5F);
+        });
+    }
+
+    @Test
+    public void NoInputTesting(){
+        assertThrows(RuntimeException.class, () -> {
+            HexagonalPrism.prism_volume(' ', ' ');
+        });
+    }
+
+//    @Test
+//    public void
+//
 }
