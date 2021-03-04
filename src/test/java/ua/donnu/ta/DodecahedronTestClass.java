@@ -40,23 +40,27 @@ public class DodecahedronTestClass {
     }
 
     @Test
+    @DisplayName("Check the result of dodecahedron area calculation with zero edge value")
+    public void ZeroValue() {
+        Assertions.assertEquals(0, Dodecahedron.float_area_value(0));
+    }
+
+    @Test
     @DisplayName("Check the result of dodecahedron area calculation with double data value")
     public void DoubleValue() {
         Assertions.assertEquals(743.2462370544337, 743.2462370544337, Dodecahedron.double_area_value(6), "Calculation is not correct");
-    }
-
-    public void ZeroValue() {
-        Assertions.assertEquals();
     }
 /*
     @Test
     @Tag("exp: fail")
     @DisplayName("Check the result of dodecahedron area calculation without edge value")
     public void NoValue() {
-        Assertions.assertEquals(743.2462f, Dodecahedron.float_area_value(null), "There is no edge value");
+        Assertions.assert(743.2462f, Dodecahedron.float_area_value(null), "There is no edge value");
     }
 
+
  */
+
     /*
     @Test
     @DisplayName("Check the result of dodecahedron area calculation with string edge value")
