@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -51,7 +51,19 @@ public class HexagonalPrismTestClass {
         assertEquals(0, HexagonalPrism.surface_area(HexagonalPrism.base_area(0),HexagonalPrism.side_area((float)0, (float)0)));
     }
 
+    public static int[] [] data(){
+        return new int[][]{{90, 2, 4}, {950, 8, 12}, {1395, 9, 15}};
+    }
+
     @ParameterizedTest
-    @ValueSource(ints = {1,})
+    @MethodSource (value = "data")
+    void TestWithSetsOfParameters(int[] data){
+
+        int expected = data[0];
+        int height = data[1];
+        int base_side = data[2];
+
+        assertEquals(expected, HexagonalPrism.surface_area(HexagonalPrism.base_area(base_side),HexagonalPrism.side_area(height, base_side)));
+    }
 
 }
