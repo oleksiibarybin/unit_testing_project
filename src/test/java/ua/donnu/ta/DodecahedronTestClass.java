@@ -9,75 +9,85 @@ import ua.donnu.ta.dodecahedron.Dodecahedron;
 public class DodecahedronTestClass {
 
     @Test
-    @DisplayName("Check the result of dodecahedron area calculation with float edge value")
+    @Tag("Positive")
+    @DisplayName("Float edge value")
     public void FloatValue() {
         Assertions.assertEquals(743.2462f, Dodecahedron.float_area_value(6.0F), "The calculation is not correct");
     }
 
     @Test
-    @Tag("exp: fail")
-    @DisplayName("Check the result of dodecahedron area calculation with integer edge value")
+    @Tag("Negative")
+    @DisplayName("Integer edge value")
     public void IntegerValue() {
         Assertions.assertNotEquals(743.2462, 743, Dodecahedron.float_area_value(6), "For integer edge value we will get approximate value of dodecahedron area. Please, use float.");
     }
 
     @Test
-    @DisplayName("Check the result of dodecahedron area calculation with negative edge value")
+    @Tag("Positive")
+    @DisplayName("Negative edge value")
     public void NegativeValue() {
         Assertions.assertEquals(743.2462f, Dodecahedron.float_area_value(-6.0f), "The calculation is not correct");
     }
 
     @Test
-    @DisplayName("Check the result of dodecahedron area calculation with positive edge value")
+    @Tag("Positive")
+    @DisplayName("Positive edge value")
     public void PositiveValue() {
         Assertions.assertEquals(743.2462f, Dodecahedron.float_area_value(6.0F), "The calculation is not correct");
     }
 
     @Test
-    @DisplayName("Check the result of dodecahedron area calculation with five positive digits value")
+    @Tag("Positive")
+    @DisplayName("Positive five digits edge value")
     public void PositiveFiveDigitsValue() {
         Assertions.assertEquals(2.548804352E9, Dodecahedron.float_area_value(11111.0f));
     }
 
     @Test
-    @DisplayName("Check the result of dodecahedron area calculation with zero edge value")
+    @Tag("Positive")
+    @DisplayName("Zero edge value")
     public void ZeroValue() {
         Assertions.assertEquals(0, Dodecahedron.float_area_value(0));
     }
 
     @Test
-    @DisplayName("Check the result of dodecahedron area calculation with double data value")
+    @Tag("Positive")
+    @DisplayName("Double edge value(d)")
     public void DoubleValue() {
         Assertions.assertEquals(743.2462370544337, 743.2462370544337, Dodecahedron.double_area_value(6), "Calculation is not correct");
     }
 
     @Test
-    @Tag("exp: fail")
-    @DisplayName("Check the result of dodecahedron area calculation with integer edge value")
+    @Tag("Negative")
+    @DisplayName("Integer edge value(d)")
     public void IntegerValue_() {
         Assertions.assertNotEquals(743.2462370544337, 743, Dodecahedron.double_area_value(6), "For integer edge value we will get approximate value of dodecahedron area. Please, use float/double.");
     }
 
     @Test
-    @DisplayName("Check the result of dodecahedron area calculation with negative edge value")
+    @Tag("Positive")
+    @DisplayName("Negative edge value(d)")
     public void NegativeValue_() {
         Assertions.assertEquals(743.2462370544337, Dodecahedron.double_area_value(-6.0), "The calculation is not correct");
     }
 
     @Test
-    @DisplayName("Check the result of dodecahedron area calculation with positive edge value")
+    @Tag("Positive")
+    @DisplayName("Positive edge value(d)")
     public void PositiveValue_() {
         Assertions.assertEquals(743.2462370544337, Dodecahedron.double_area_value(6.0), "The calculation is not correct");
     }
  
     @Test
-    @DisplayName("Check the result of dodecahedron area calculation with five positive digits value")
+    @Tag("Positive")
+    @DisplayName("Positive five digits edge value(d)")
     public void PositiveFiveDigitsValue_() {
         Assertions.assertEquals(2.548804431426671E9, Dodecahedron.double_area_value(11111.0));
     }
 
     @Test
-    @DisplayName("Check the result of dodecahedron area calculation with zero edge value")
+    @Tag("Positive")
+    @DisplayName("Zero edge value(d)")
     public void ZeroValue_() {
         Assertions.assertEquals(0, Dodecahedron.double_area_value(0));
     }
