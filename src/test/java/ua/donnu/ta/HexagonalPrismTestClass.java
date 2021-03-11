@@ -52,7 +52,7 @@ public class HexagonalPrismTestClass {
 
     @Test
     public void checkSurfaceAreaCalculationIsCorrectForPositiveIntegerHeightAndBaseSide(){
-        assertEquals(1460, HexagonalPrism.surfaceArea(HexagonalPrism.baseArea(10),HexagonalPrism.sideArea(10, 20)));
+        assertEquals(2239, HexagonalPrism.surfaceArea(10,20));
     }
 
     public static int[] [] data(){
