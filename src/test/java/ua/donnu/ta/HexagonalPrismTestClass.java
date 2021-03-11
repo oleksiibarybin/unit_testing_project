@@ -56,7 +56,7 @@ public class HexagonalPrismTestClass {
     }
 
     public static int[] [] data(){
-        return new int[][]{{90, 2, 4}, {950, 8, 12}, {1395, 9, 15}};
+        return new int[][]{{880331264, 1012000000, 1112000000}, {950, 8, 12}, {1395, 9, 15}};
     }
 
     @ParameterizedTest
@@ -65,9 +65,9 @@ public class HexagonalPrismTestClass {
 
         int expected = data[0];
         int height = data[1];
-        int base_side = data[2];
+        int baseSide = data[2];
 
-        assertEquals(expected, HexagonalPrism.surfaceArea(HexagonalPrism.baseArea(base_side),HexagonalPrism.sideArea(height, base_side)));
+        assertEquals(expected, HexagonalPrism.surfaceArea(height, baseSide));
     }
 
 }
