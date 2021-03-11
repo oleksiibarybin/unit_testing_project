@@ -12,33 +12,33 @@ public class HexagonalPrismTestClass {
     //@Disabled
     @Test
     @DisplayName("Hexagonal prism surface area calculator logical functionality test for positive float numbers")
-    public void HexagonalPrismSurfaceAreaAndVolumeCalculatorLogicalFunctionalityCheck(){
+    public void checkSurfaceAreaCalculationIsCorrectForPositiveFloatHeightAndBaseSide(){
         assertEquals(1493.449462890625, HexagonalPrism.surfaceArea(14.5F, 12.5F));
     }
 
     @Test
-    public void HexagonalPrismNegativeHeightCalcTesting(){
+    public void checkIllegalArgumentExceptionIsThrownForNegativeFloatHeight(){
         assertThrows(IllegalArgumentException.class, () -> {
             HexagonalPrism.prismVolume(-12.5F, 14.5F);
         });
     }
 
     @Test
-    public void HexagonalPrismZeroHeightCalcTesting(){
+    public void checkIllegalArgumentExceptionIsThrownForZeroHeight(){
         assertThrows(IllegalArgumentException.class, () -> {
             HexagonalPrism.prismVolume(0, 14.5F);
         });
     }
 
     @Test
-    public void HexagonalPrismNegativeBaseSideCalcTesting(){
+    public void checkIllegalArgumentExceptionIsThrownForNegativeFloatBaseSide(){
         assertThrows(IllegalArgumentException.class, () -> {
             HexagonalPrism.prismVolume(12.5F, -14.5F);
         });
     }
 
     @Test
-    public void HexagonalPrismZeroBaseSideCalcTesting(){
+    public void checkIllegalArgumentExceptionIsThrownForZeroBaseSide(){
         assertThrows(IllegalArgumentException.class, () -> {
             HexagonalPrism.prismVolume(12.5F, 0);
         });
@@ -46,12 +46,12 @@ public class HexagonalPrismTestClass {
 
     @Test
     @DisplayName("Hexagonal prism surface area calculator test for positive float height and integer base side")
-    public void HexagonalPrismSurfaceAreaAndVolumeCalculatorDifferentTypesOfDataCheck(){
+    public void checkSurfaceAreaCalculationIsCorrectForPositiveFloatHeightAndIntegerBaseSide(){
         assertEquals(1418.123046875, HexagonalPrism.surfaceArea(14.5F, 12));
     }
 
     @Test
-    public void HexagonalPrismSurfaceAreaAndVolumeCalculatorIntegerValuesCheck(){
+    public void checkSurfaceAreaCalculationIsCorrectForPositiveIntegerHeightAndBaseSide(){
         assertEquals(1460, HexagonalPrism.surfaceArea(HexagonalPrism.baseArea(10),HexagonalPrism.sideArea(10, 20)));
     }
 
@@ -61,6 +61,7 @@ public class HexagonalPrismTestClass {
 
     @ParameterizedTest
     @MethodSource (value = "data")
+    @DisplayName("Check that program can work with multi-digit values")
     void TestWithSetsOfParameters(int[] data){
 
         int expected = data[0];
