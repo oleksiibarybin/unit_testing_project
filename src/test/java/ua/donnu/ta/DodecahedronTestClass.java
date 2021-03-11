@@ -8,32 +8,35 @@ import ua.donnu.ta.dodecahedron.Dodecahedron;
 
 public class DodecahedronTestClass {
 
+    final float float_const = (float) 743.2462;
+    final double double_const = (double) 743.2462370544337;
+
     @Test
     @Tag("Positive")
     @DisplayName("Float edge value")
     public void FloatValue() {
-        Assertions.assertEquals(743.2462f, Dodecahedron.float_area_value(6.0F), "The calculation is not correct");
+        Assertions.assertEquals(float_const, Dodecahedron.float_area_value(6.0F), "The calculation is not correct");
     }
 
     @Test
     @Tag("Negative")
     @DisplayName("Integer edge value")
     public void IntegerValue() {
-        Assertions.assertNotEquals(743.2462, 743, Dodecahedron.float_area_value(6), "For integer edge value we will get approximate value of dodecahedron area. Please, use float.");
+        Assertions.assertNotEquals(float_const, 743, Dodecahedron.float_area_value(6), "For integer edge value we will get approximate value of dodecahedron area. Please, use float.");
     }
 
     @Test
     @Tag("Positive")
     @DisplayName("Negative edge value")
     public void NegativeValue() {
-        Assertions.assertEquals(743.2462f, Dodecahedron.float_area_value(-6.0f), "The calculation is not correct");
+        Assertions.assertEquals(float_const, Dodecahedron.float_area_value(-6.0f), "The calculation is not correct");
     }
 
     @Test
     @Tag("Positive")
     @DisplayName("Positive edge value")
     public void PositiveValue() {
-        Assertions.assertEquals(743.2462f, Dodecahedron.float_area_value(6.0F), "The calculation is not correct");
+        Assertions.assertEquals(float_const, Dodecahedron.float_area_value(6.0F), "The calculation is not correct");
     }
 
     @Test
@@ -54,28 +57,28 @@ public class DodecahedronTestClass {
     @Tag("Positive")
     @DisplayName("Double edge value(d)")
     public void DoubleValue() {
-        Assertions.assertEquals(743.2462370544337, 743.2462370544337, Dodecahedron.double_area_value(6), "Calculation is not correct");
+        Assertions.assertEquals(double_const, double_const, Dodecahedron.double_area_value(6), "Calculation is not correct");
     }
 
     @Test
     @Tag("Negative")
     @DisplayName("Integer edge value(d)")
     public void IntegerValue_() {
-        Assertions.assertNotEquals(743.2462370544337, 743, Dodecahedron.double_area_value(6), "For integer edge value we will get approximate value of dodecahedron area. Please, use float/double.");
+        Assertions.assertNotEquals(double_const, 743, Dodecahedron.double_area_value(6), "For integer edge value we will get approximate value of dodecahedron area. Please, use float/double.");
     }
 
     @Test
     @Tag("Positive")
     @DisplayName("Negative edge value(d)")
     public void NegativeValue_() {
-        Assertions.assertEquals(743.2462370544337, Dodecahedron.double_area_value(-6.0), "The calculation is not correct");
+        Assertions.assertEquals(double_const, Dodecahedron.double_area_value(-6.0), "The calculation is not correct");
     }
 
     @Test
     @Tag("Positive")
     @DisplayName("Positive edge value(d)")
     public void PositiveValue_() {
-        Assertions.assertEquals(743.2462370544337, Dodecahedron.double_area_value(6.0), "The calculation is not correct");
+        Assertions.assertEquals(double_const, Dodecahedron.double_area_value(6.0), "The calculation is not correct");
     }
  
     @Test
