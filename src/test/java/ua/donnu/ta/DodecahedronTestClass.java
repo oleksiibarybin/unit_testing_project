@@ -13,7 +13,7 @@ public class DodecahedronTestClass {
 
     @Test
     @Tag("Positive")
-    @DisplayName("Float edge value")
+    @DisplayName("Check float positive edge value 6.0F")
     public void FloatValue() {
         Assertions.assertEquals(EXPECTED_POSITIVE_FLOAT_VALUE, Dodecahedron.calculate_float_area_value(6.0F), "The calculation is not correct");
     }
@@ -21,84 +21,65 @@ public class DodecahedronTestClass {
 
     @Test
     @Tag("Positive")
-    @DisplayName("Negative edge value")
+    @DisplayName("Check float negative edge value -6.0F")
     public void NegativeValue() {
         Assertions.assertEquals(EXPECTED_POSITIVE_FLOAT_VALUE, Dodecahedron.calculate_float_area_value(-6.0f), "The calculation is not correct");
     }
 
     @Test
     @Tag("Positive")
-    @DisplayName("Positive edge value")
+    @DisplayName("Check float positive edge value 6.0F")
     public void PositiveValue() {
         Assertions.assertEquals(EXPECTED_POSITIVE_FLOAT_VALUE, Dodecahedron.calculate_float_area_value(6.0F), "The calculation is not correct");
     }
 
     @Test
     @Tag("Positive")
-    @DisplayName("Positive five digits edge value")
+    @DisplayName("Check float positive five digits edge value 11111.0f")
     public void PositiveFiveDigitsValue() {
         Assertions.assertEquals(2.548804352E9, Dodecahedron.calculate_float_area_value(11111.0f));
     }
 
     @Test
     @Tag("Positive")
-    @DisplayName("Zero edge value")
+    @DisplayName("Check 0 edge value")
     public void ZeroValue() {
         Assertions.assertEquals(0, Dodecahedron.calculate_float_area_value(0));
     }
 
     @Test
     @Tag("Positive")
-    @DisplayName("Double edge value(d)")
+    @DisplayName("Check double edge value 6.0")
     public void DoubleValue() {
         Assertions.assertEquals(EXPECTED_POSITIVE_DOUBLE_VALUE, EXPECTED_POSITIVE_DOUBLE_VALUE, Dodecahedron.calculate_double_area_value(6), "Calculation is not correct");
     }
 
     @Test
     @Tag("Positive")
-    @DisplayName("Negative edge value(d)")
+    @DisplayName("Check double negative edge value -6.0")
     public void NegativeValue_() {
         Assertions.assertEquals(EXPECTED_POSITIVE_DOUBLE_VALUE, Dodecahedron.calculate_double_area_value(-6.0), "The calculation is not correct");
     }
 
     @Test
     @Tag("Positive")
-    @DisplayName("Positive edge value(d)")
+    @DisplayName("Check double positive edge value 6.0")
     public void PositiveValue_() {
         Assertions.assertEquals(EXPECTED_POSITIVE_DOUBLE_VALUE, Dodecahedron.calculate_double_area_value(6.0), "The calculation is not correct");
     }
  
     @Test
     @Tag("Positive")
-    @DisplayName("Positive five digits edge value(d)")
+    @DisplayName("Check double positive five digits edge value 11111.0")
     public void PositiveFiveDigitsValue_() {
         Assertions.assertEquals(2.548804431426671E9, Dodecahedron.calculate_double_area_value(11111.0));
     }
 
     @Test
     @Tag("Positive")
-    @DisplayName("Zero edge value(d)")
+    @DisplayName("Check 0 edge value")
     public void ZeroValue_() {
         Assertions.assertEquals(0, Dodecahedron.calculate_double_area_value(0));
     }
-/*
-    @Test
-    @Tag("exp: fail")
-    @DisplayName("Check the result of dodecahedron area calculation without edge value")
-    public void NoValue() {
-        Assertions.assert(743.2462f, Dodecahedron.float_area_value(null), "There is no edge value");
-    }
 
-
- */
-
-    /*
-    @Test
-    @DisplayName("Check the result of dodecahedron area calculation with string edge value")
-    public void StringValue() {
-        Assertions.assertEquals(743.2462f, Dodecahedron.float_area_value(), "The calculation is not correct");
-    }
-
-
-     */
 }
