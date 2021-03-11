@@ -9,12 +9,12 @@ import ua.donnu.ta.dodecahedron.Dodecahedron;
 public class DodecahedronTestClass {
 
     static final float EXPECTED_POSITIVE_FLOAT_VALUE = (float) 743.2462;
-    final double EXPECTED_POSITIVE_DOUBLE_VALUE = (double) 743.2462370544337;
+    static final double EXPECTED_POSITIVE_DOUBLE_VALUE = (double) 743.2462370544337;
 
     @Test
     @Tag("Positive")
     @DisplayName("Check float positive edge value 6.0F")
-    public void FloatValue() {
+    public void checkFloatPositiveValue() {
         Assertions.assertEquals(EXPECTED_POSITIVE_FLOAT_VALUE, Dodecahedron.calculate_float_area_value(6.0F), "The calculation is not correct");
     }
 
