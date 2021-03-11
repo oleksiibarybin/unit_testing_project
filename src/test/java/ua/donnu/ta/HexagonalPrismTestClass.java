@@ -1,6 +1,5 @@
 package ua.donnu.ta;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -14,41 +13,36 @@ public class HexagonalPrismTestClass {
     @Test
     @DisplayName("Hexagonal prism surface area calculator logical functionality test for positive float numbers")
     public void HexagonalPrismSurfaceAreaAndVolumeCalculatorLogicalFunctionalityCheck(){
-        assertEquals(1493.449462890625, HexagonalPrism.surface_area(HexagonalPrism.base_area((float)12.5),HexagonalPrism.side_area((float)14.5, (float)12.5)));
+        assertEquals(1493.449462890625, HexagonalPrism.surfaceArea(14.5F, 12.5F));
     }
 
     @Test
     public void HexagonalPrismSurfaceAreaAndVolumeCalculatorNegativeNumbersCalculationCheck(){
-        assertEquals(2276.02294921875, HexagonalPrism.prism_volume(-12.5F, -14.5F));
+        assertEquals(2276.02294921875, HexagonalPrism.prismVolume(-12.5F, -14.5F));
     }
 
     @Test
     public void ExceptionTesting(){
         assertThrows(RuntimeException.class, () -> {
-            HexagonalPrism.prism_volume(-12.5F, -14.5F);
+            HexagonalPrism.prismVolume(-12.5F, -14.5F);
         });
     }
 
     @Test
     public void NoInputTesting(){
         assertThrows(RuntimeException.class, () -> {
-            HexagonalPrism.prism_volume(' ', ' ');
+            HexagonalPrism.prismVolume(' ', ' ');
         });
     }
 
     @Test
-    public void TypeStringData(){
-        assertEquals("somevalue", HexagonalPrism.prism_volume("somevalue1", "somevalue2"));
-    }
-
-    @Test
     public void HexagonalPrismSurfaceAreaAndVolumeCalculatorIntegerValuesCheck(){
-        assertEquals(1460, HexagonalPrism.surface_area(HexagonalPrism.base_area(10),HexagonalPrism.side_area(10, 20)));
+        assertEquals(1460, HexagonalPrism.surfaceArea(HexagonalPrism.baseArea(10),HexagonalPrism.sideArea(10, 20)));
     }
 
     @Test
     public void ZeroValuesTesting(){
-        assertEquals(0, HexagonalPrism.surface_area(HexagonalPrism.base_area(0),HexagonalPrism.side_area((float)0, (float)0)));
+        assertEquals(0, HexagonalPrism.surfaceArea(0,0));
     }
 
     public static int[] [] data(){
@@ -63,7 +57,7 @@ public class HexagonalPrismTestClass {
         int height = data[1];
         int base_side = data[2];
 
-        assertEquals(expected, HexagonalPrism.surface_area(HexagonalPrism.base_area(base_side),HexagonalPrism.side_area(height, base_side)));
+        assertEquals(expected, HexagonalPrism.surfaceArea(HexagonalPrism.baseArea(base_side),HexagonalPrism.sideArea(height, base_side)));
     }
 
 }
