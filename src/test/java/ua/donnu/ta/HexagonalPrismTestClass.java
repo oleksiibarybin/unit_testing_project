@@ -17,32 +17,42 @@ public class HexagonalPrismTestClass {
     }
 
     @Test
-    public void HexagonalPrismSurfaceAreaAndVolumeCalculatorNegativeNumbersCalculationCheck(){
-        assertEquals(2276.02294921875, HexagonalPrism.prismVolume(-12.5F, -14.5F));
-    }
-
-    @Test
-    public void ExceptionTesting(){
-        assertThrows(RuntimeException.class, () -> {
-            HexagonalPrism.prismVolume(-12.5F, -14.5F);
+    public void HexagonalPrismNegativeHeightCalcTesting(){
+        assertThrows(IllegalArgumentException.class, () -> {
+            HexagonalPrism.prismVolume(-12.5F, 14.5F);
         });
     }
 
     @Test
-    public void NoInputTesting(){
-        assertThrows(RuntimeException.class, () -> {
-            HexagonalPrism.prismVolume(' ', ' ');
+    public void HexagonalPrismZeroHeightCalcTesting(){
+        assertThrows(IllegalArgumentException.class, () -> {
+            HexagonalPrism.prismVolume(0, 14.5F);
         });
+    }
+
+    @Test
+    public void HexagonalPrismNegativeBaseSideCalcTesting(){
+        assertThrows(IllegalArgumentException.class, () -> {
+            HexagonalPrism.prismVolume(12.5F, -14.5F);
+        });
+    }
+
+    @Test
+    public void HexagonalPrismZeroBaseSideCalcTesting(){
+        assertThrows(IllegalArgumentException.class, () -> {
+            HexagonalPrism.prismVolume(12.5F, 0);
+        });
+    }
+
+    @Test
+    @DisplayName("Hexagonal prism surface area calculator test for positive float height and integer base side")
+    public void HexagonalPrismSurfaceAreaAndVolumeCalculatorDifferentTypesOfDataCheck(){
+        assertEquals(1418.123046875, HexagonalPrism.surfaceArea(14.5F, 12));
     }
 
     @Test
     public void HexagonalPrismSurfaceAreaAndVolumeCalculatorIntegerValuesCheck(){
         assertEquals(1460, HexagonalPrism.surfaceArea(HexagonalPrism.baseArea(10),HexagonalPrism.sideArea(10, 20)));
-    }
-
-    @Test
-    public void ZeroValuesTesting(){
-        assertEquals(0, HexagonalPrism.surfaceArea(0,0));
     }
 
     public static int[] [] data(){
