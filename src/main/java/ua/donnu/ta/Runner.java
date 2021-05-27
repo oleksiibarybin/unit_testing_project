@@ -1,4 +1,4 @@
-package ua.donnu.ta;
+/*package ua.donnu.ta;
 
 public class Runner {
 
@@ -8,3 +8,4 @@ public class Runner {
     }
 
 }
+*/
