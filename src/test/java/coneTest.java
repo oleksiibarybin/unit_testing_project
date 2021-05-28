@@ -9,9 +9,9 @@ public class coneTest {
         //При r = 5 и h = 12 Ожидаемый результат "314"
 
         int actual = (int)Math.round(c.volume(5,12));
-        float expected = 314;
+        float expected = 315;
 
-        assertEquals(actual, expected, 0);
+        assertEquals(expected, actual,0);
     }
 
     @org.junit.Test
@@ -23,6 +23,6 @@ public class coneTest {
         float actual = (int)Math.round(c.surface_area(5,13));
         float expected = (float) 283;
 
-        assertEquals(actual, expected, 0);
+        assertEquals(expected, actual,0);
     }
 }
