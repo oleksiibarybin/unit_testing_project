@@ -1,8 +1,9 @@
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
 
-public class coneTest {
+import static org.junit.jupiter.api.Assertions.*;
 
-    @org.junit.Test
+class coneTests{
+    @Test
     public void volume() throws Exception {
         cone c = new cone();
 
@@ -14,7 +15,7 @@ public class coneTest {
         assertEquals(expected, actual,0);
     }
 
-    @org.junit.Test
+    @Test
     public void surface_area() {
         cone c = new cone();
 
