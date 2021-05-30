@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -69,5 +70,9 @@ public class testSite {
         Assertions.assertEquals("Таке поєднання логіну та паролю невірне", actual);
     }
 
+    @AfterEach
+    public void browserClose(){
+        driver.close();
+    }
 
 }
