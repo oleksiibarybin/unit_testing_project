@@ -40,7 +40,7 @@ public class testSite {
     public void checkTitle() throws InterruptedException {
         Thread.sleep(3000);
         driver.get("https://zironka.ua");
-        String input = "Сукня";
+        String input = "Піжама"; //Піжама - true || Сукня - false( при поиске находит еще футболки)
         WebElement searchBox = driver.findElement(By.name("q"));
         WebElement searchButton = driver.findElement(By.xpath("//*[@class='button button_size-l header__search-btn']"));
         searchBox.sendKeys(input);
